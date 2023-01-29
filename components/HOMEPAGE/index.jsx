@@ -158,7 +158,24 @@ function HOMEPAGE(props) {
           <div className="what-we-do">{whatWeDo}</div>
           <div className="rectangle-10"></div>
           {/*<img className="imageseq" src={imageseq} alt="IMAGESEQ" />*/}
-
+          <div
+        style={{
+          width: "100%",
+          display: "table",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
+        <Controller>
+          <Scene duration="1000%" triggerHook="onLeave" pin>
+            {(progress) => (
+              <div style={{ height: "100vh", position: "relative" }}>
+                <Sequence ref={ref} progress={progress} />
+              </div>
+            )}
+          </Scene>
+        </Controller>
+      </div>
           <Component1
             place={component1Props.place}
             baseball={component1Props.baseball}
