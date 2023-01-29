@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Component1 from "../Component1";
 import Component4 from "../Component4";
 import MOUSEOFFSOFTBALL from "../MOUSEOFFSOFTBALL";
 import "./HOMEPAGE.css";
+import { Controller, Scene } from "react-scrollmagic";
+import Sequence from "../../Sequence";
+
 function HOMEPAGE(props) {
   const {
     screenshot20230123At8321,
@@ -54,7 +57,7 @@ function HOMEPAGE(props) {
     component4Props,
     mOUSEOFFSOFTBALLProps,
   } = props;
-
+  const ref = useRef();
   useEffect(() => {
     var image = document.querySelectorAll(".pexels-vlad-chean-2694317-1");
     new window.simpleParallax(image, {
